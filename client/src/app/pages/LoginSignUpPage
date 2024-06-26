@@ -1,4 +1,4 @@
- <!DOCTYPE html> 
+<!DOCTYPE html> 
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -11,8 +11,8 @@
 <body>
     <div class="container">
         <h2>Sign Up</h2>
-        <!--<form action="/submit_signup" method="post">-->
-            <form id="signup-form">
+        <form action="/submit_signup" method="post">
+           
             <label for="name">Full Name *</label>
             <input type="text" id="name" name="fullname" required>
 
@@ -25,23 +25,15 @@
             <label for="confirm-password">Confirm Password *</label>
             <input type="password" id="confirm-password" name="confirm-password" required>
 
-            <button type="submit">Sign Up</button>
+            <input type="submit" value="Sign Up">
         </form>
 
         <p style="text-align: center; font-size: 12px;">
             By signing up, you agree to our <a href="#">Terms</a> and <a href="#">Privacy Policy</a>.
         </p>
-        <p class="or">OR Login</p>
+        <p class="or">OR Login With</p>
         <div class="social-buttons">
-            <!--<a href="https://www.google.com" target="_blank">
-                <button class="google">Google</button>
-            </a>
-            <a href="https://www.facebook.com" target="_blank">
-                <button class="facebook">Facebook</button>
-            </a>
-            <a href="https://www.twitter.com" target="_blank">
-                <button class="twitter">Twitter</button>
-            </a>-->
+            
             <button id="googleBtn" onclick="googleSignIn()">Google</button><!--new-->
             <button id="facebookBtn" onclick="loginWithFacebook()">Facebook</button>
             <button id="twitterBtn" onclick="loginWithTwitter()">Twitter</button>
@@ -53,97 +45,7 @@
         </div>
     </div>
     <script src="https://apis.google.com/js/platform.js" async defer></script>
-    <script>
-        function googleSignIn() {
-            // Initiate Google sign-in
-            const auth2 = gapi.auth2.getAuthInstance();
-            auth2.signIn().then(googleUser => {
-                onSignInGoogle(googleUser);
-            });
-        }
-
-        function onSignInGoogle(googleUser) {
-            var profile = googleUser.getBasicProfile();
-            console.log('Google ID: ' + profile.getId());
-            console.log('Name: ' + profile.getName());
-            console.log('Image URL: ' + profile.getImageUrl());
-            console.log('Email: ' + profile.getEmail());
-
-            var id_token = googleUser.getAuthResponse().id_token;
-            console.log('ID Token: ' + id_token);
-
-            // Send the ID token to your server with an HTTP POST request
-            var xhr = new XMLHttpRequest();
-            xhr.open('POST', '/tokensignin');
-            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-            xhr.onload = function() {
-                console.log('Signed in as: ' + xhr.responseText);
-            };
-            xhr.send('idtoken=' + id_token);
-        }
-
-        // Facebook Login
-        window.fbAsyncInit = function() {
-            FB.init({
-                appId      : 'YOUR_FACEBOOK_APP_ID',
-                cookie     : true,
-                xfbml      : true,
-                version    : 'v10.0'
-            });
-            
-            FB.AppEvents.logPageView();   
-        };
-
-        (function(d, s, id){
-            var js, fjs = d.getElementsByTagName(s)[0];
-            if (d.getElementById(id)) {return;}
-            js = d.createElement(s); js.id = id;
-            js.src = "https://connect.facebook.net/en_US/sdk.js";
-            fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));
-
-        function loginWithFacebook() {
-            FB.login(function(response) {
-                if (response.authResponse) {
-                    console.log('Welcome!  Fetching your information.... ');
-                    FB.api('/me', function(response) {
-                        console.log('Good to see you, ' + response.name + '.');
-                        // Send the access token to your server with an HTTP POST request
-                        var xhr = new XMLHttpRequest();
-                        xhr.open('POST', '/fbtokensignin');
-                        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-                        xhr.onload = function() {
-                            console.log('Signed in as: ' + xhr.responseText);
-                        };
-                        xhr.send('accesstoken=' + FB.getAuthResponse().accessToken);
-                    });
-                } else {
-                    console.log('User cancelled login or did not fully authorize.');
-                }
-            }, {scope: 'public_profile,email'});
-        }
-
-        // Twitter Login
-        function loginWithTwitter() {
-            window.location.href = '/twitterlogin';
-        }
-
-        // Load the Google Auth2 library
-        function loadGoogleAuth() {
-            gapi.load('auth2', function() {
-                gapi.auth2.init();
-            });
-        }
-
-        // Initialize the Google Auth2 library when the script loads
-        (function() {
-            var po = document.createElement('script');
-            po.type = 'text/javascript';
-            po.async = true;
-            po.src = 'https://apis.google.com/js/platform.js?onload=loadGoogleAuth';
-            var s = document.getElementsByTagName('script')[0];
-            s.parentNode.insertBefore(po, s);
-        })();
-    </script>
+    
+    <script src="script1.js"></script>
 </body>
 </html>
