@@ -4,94 +4,91 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us</title>
-    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body>
-    
-    <header class="navbar">
-        <div class="container">
-            <div class="logo">
-                <a href="#">thejobs</a>
+<body class="bg-gray-100">
+    <header class="fixed top-0 z-50 w-full bg-white shadow-lg">
+        <div class="container flex items-center justify-between px-4 py-3 mx-auto">
+            <div class="text-2xl font-bold">
+                <a href="#" class="text-gray-800">thejobs</a>
             </div>
             <nav>
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Jobs</a></li>
-                    <li><a href="#">Explore</a></li>
-                    <li><a href="#">Company</a></li>
-                    <li><a href="#">Contact Us</a></li>
+                <ul class="flex space-x-4">
+                    <li><a href="#" class="text-gray-800 hover:text-blue-500">Home</a></li>
+                    <li><a href="#" class="text-gray-800 hover:text-blue-500">Jobs</a></li>
+                    <li><a href="#" class="text-gray-800 hover:text-blue-500">Explore</a></li>
+                    <li><a href="#" class="text-gray-800 hover:text-blue-500">Company</a></li>
+                    <li><a href="#" class="text-gray-800 hover:text-blue-500">Contact Us</a></li>
                 </ul>
             </nav>
-            <div class="auth-links">
-                
-                <!--<a href="login.html">Log In</a>-->
-                <a href="LoginSignUpPage.html">Sign Up</a>
+            <div>
+                <!--<a href="login.html" class="font-semibold text-gray-800 hover:text-blue-500">Log In</a>-->
+                <a href="LoginSignUpPage.html" class="ml-4 font-semibold text-gray-800 hover:text-blue-500">Sign Up</a>
             </div>
         </div>
     </header>
 
-    <section class="contact-us">
-        <div class="container">
-            <h1>Contact Us</h1>
-            <p>Get in touch with us. We're here to assist you in finding the perfect job opportunities.</p>
-            <div class="contact-content">
-                <div class="contact-form">
+    <section class="py-12 pt-20"> <!-- Added pt-20 to move the section down -->
+        <div class="container mx-auto text-center">     
+
+            <h1 class="mb-4 text-4xl font-bold">Contact Us</h1>
+            <p class="mb-8 text-lg">Get in touch with us. We're here to assist you in finding the perfect job opportunities.</p>
+            <div class="flex flex-wrap justify-center gap-8">
+                <div class="w-full p-6 bg-white rounded-md shadow-md md:w-5/12">
                     <!--<form action="/submit-form" method="POST">-->
-                        <form id="contactForm">
-                        <label for="name">Your Full Name</label>
-                        <input type="text" id="name" name="name" placeholder="Full name" required>
-
-                        <label for="email">Your Email Address</label>
-                        <input type="email" id="email" name="email" placeholder="yourname@example.com" required>
-
-                        <label for="subject">Subject</label>
-                        <input type="text" id="subject" name="subject" placeholder="Enter a Subject" required>
-
-                        <label for="message">Your Message</label>
-                        <textarea id="message" name="message" placeholder="Write your message here" rows="5" required></textarea>
-
-                        <button type="submit">Send Message</button>
+                    <form id="contactForm">
+                        <label for="name" class="block mb-2 font-semibold text-left">Your Full Name</label>
+                        <input type="text" id="name" name="name" placeholder="Full name" required class="w-full p-3 mb-4 border border-gray-300 rounded-md">
+                        
+                        <label for="email" class="block mb-2 font-semibold text-left">Your Email Address</label>
+                        <input type="email" id="email" name="email" placeholder="yourname@example.com" required class="w-full p-3 mb-4 border border-gray-300 rounded-md">
+                        
+                        <label for="subject" class="block mb-2 font-semibold text-left">Subject</label>
+                        <input type="text" id="subject" name="subject" placeholder="Enter a Subject" required class="w-full p-3 mb-4 border border-gray-300 rounded-md">
+                        
+                        <label for="message" class="block mb-2 font-semibold text-left">Your Message</label>
+                        <textarea id="message" name="message" placeholder="Write your message here" rows="5" required class="w-full p-3 mb-4 border border-gray-300 rounded-md"></textarea>
+                        
+                        <button type="submit" class="w-full p-3 text-white bg-blue-500 rounded-md hover:bg-blue-600">Send Message</button>
                     </form>
                 </div>
-                <div class="contact-info">
-                    <h2>Call Us</h2>
-                    <div class="icon">
-                        <img src="https://img.icons8.com/color/452/apple-phone.png" />
-                    
-                    <div>
-                    <p><a href="tel:+964 000 000 0000">+964 000 000 0000</a> </p>
-                    <p><a href="tel:+964 000 000 0000">+964 000 000 0000</a> </p>
-                    </div>    
-                    </div>
-                    
-                    <h2>Email Us</h2>
-                    <div class="icon">
-                    <img src="https://img.icons8.com/color/344/gmail-new.png" /></a>
+                <div class="w-full p-6 bg-white rounded-md shadow-md md:w-5/12">
+                    <h2 class="mb-4 text-xl font-bold">Call Us</h2>
+                    <div class="flex items-center mb-4">
+                        <img src="https://img.icons8.com/color/452/apple-phone.png" class="w-12 h-12 mr-4"/>
                         <div>
-                            <p><a href="mailto:########@gmail.com">########@gmail.com</a></p>
-                            <p><a href="mailto:########@gmail.com">########@gmail.com</a></p>
+                            <p><a href="tel:+9640000000000" class="text-blue-500">+964 000 000 0000</a></p>
+                            <p><a href="tel:+9640000000000" class="text-blue-500">+964 000 000 0000</a></p>
                         </div>
                     </div>
-                    
-                    <h2>Visit Us</h2>
-                    <p>Erbil,iraq</p>
-                    <div class="map">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d107230.40190006781!2d44.00403909287867!3d36.199961404524885!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sar!2siq!4v1718571923530!5m2!1sar!2siq" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>  
+                    <h2 class="mb-4 text-xl font-bold">Email Us</h2>
+                    <div class="flex items-center mb-4">
+                        <img src="https://img.icons8.com/color/344/gmail-new.png" class="w-12 h-12 mr-4"/>
+                        <div>
+                            <p><a href="mailto:########@gmail.com" class="text-blue-500">########@gmail.com</a></p>
+                            <p><a href="mailto:########@gmail.com" class="text-blue-500">########@gmail.com</a></p>
+                        </div>
+                    </div>
+                    <h2 class="mb-4 text-xl font-bold">Visit Us</h2>
+                    <p>Erbil, Iraq</p>
+                    <div class="mt-4">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d107230.40190006781!2d44.00403909287867!3d36.199961404524885!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sar!2siq!4v1718571923530!5m2!1sar!2siq" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="rounded-md"></iframe>  
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer class="footer">
-        <div class="container">
-            <ul>
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Contact Us</a></li>
-                <li><a href="#">Terms of Service</a></li>
-                <li><a href="#">Privacy Policy</a></li>
+    <footer class="py-4 bg-white border-t border-gray-300">
+        <div class="container mx-auto text-center">
+            <ul class="flex justify-center space-x-6">
+                <li><a href="#" class="text-gray-800 hover:text-blue-500">About Us</a></li>
+                <li><a href="#" class="text-gray-800 hover:text-blue-500">Contact Us</a></li>
+                <li><a href="#" class="text-gray-800 hover:text-blue-500">Terms of Service</a></li>
+                <li><a href="#" class="text-gray-800 hover:text-blue-500">Privacy Policy</a></li>
             </ul>
         </div>
-    </footer><script src="scripts.js"></script><!--new-->
+    </footer>
+    <script src="scripts.js"></script><!--new-->
 </body>
 </html>
