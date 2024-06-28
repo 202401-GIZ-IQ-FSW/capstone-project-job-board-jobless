@@ -1,4 +1,4 @@
-// File: /usr/src/app/client/src/app/page.js
+// File: /Users/hanan/Desktop/fproject/capstone-project-job-board-jobless/client/src/app/page.js
 import * as entry from '../../../src/app/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
