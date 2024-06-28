@@ -1,0 +1,82 @@
+// pages.jsx
+import React from 'react';
+import './tailwind.css'; 
+
+const Pages = () => {
+  return (
+    <div className="max-w-7xl mx-auto p-6">
+      <header className="flex justify-between items-center py-4 border-b">
+        <div className="text-2xl font-bold">
+          <img src="path-to-logo" alt="Company Logo" className="h-10" /> {/* Logo goes here */}
+        </div>
+        <nav>
+          <ul className="flex space-x-6">
+            <li><a href="/" className="text-gray-600 hover:text-gray-900">Home</a></li>
+            <li><a href="/about" className="text-gray-600 hover:text-gray-900">About Us</a></li>
+            <li><a href="/services" className="text-gray-600 hover:text-gray-900">Services</a></li>
+            <li><a href="/contact" className="text-gray-600 hover:text-gray-900">Contact</a></li>
+          </ul>
+        </nav>
+      </header>
+
+      <main className="mt-10 space-y-10">
+        <section className="space-y-4">
+          <h2 className="text-2xl font-bold">CEO Information</h2>
+          <div className="flex space-x-4">
+            <img src="path-to-john-doe-image" alt="John Doe" className="w-32 h-32 object-cover rounded-md"/>
+            <div>
+              <h3 className="text-xl font-bold">John Doe</h3>
+              <p className="text-gray-700">CEO at Company XYZ</p>
+              <p className="text-gray-700">Passionate about innovation and...</p>
+              <div className="flex space-x-2">
+                <a href="https://linkedin.com" className="text-blue-600 hover:underline">LinkedIn</a>
+                <a href="https://twitter.com" className="text-blue-600 hover:underline">Twitter</a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="space-y-4">
+          <h2 className="text-2xl font-bold">Contact Information</h2>
+          <p className="text-gray-700">
+            <span className="block"><i className="fas fa-map-marker-alt"></i> 123 Main Street, City, Country</span>
+            <span className="block"><i className="fas fa-phone"></i> +123 456 7890</span>
+            <span className="block"><i className="fas fa-envelope"></i> <a href="mailto:info@companyxyz.com" className="text-blue-600 hover:underline">info@companyxyz.com</a></span>
+          </p>
+          <div className="flex space-x-2">
+            <a href="https://facebook.com" className="text-blue-600 hover:underline">Facebook</a>
+            <a href="https://instagram.com" className="text-blue-600 hover:underline">Instagram</a>
+            <a href="https://linkedin.com" className="text-blue-600 hover:underline">LinkedIn</a>
+          </div>
+        </section>
+
+        <section className="space-y-4">
+          <h2 className="text-2xl font-bold">Company Information</h2>
+          <div>
+            <h3 className="text-xl font-bold">History</h3>
+            <p className="text-gray-700">Founded in 20XX, Company XYZ has been a leader...</p>
+          </div>
+          <div>
+            <h3 className="text-xl font-bold">Mission</h3>
+            <p className="text-gray-700">Our mission is...</p>
+          </div>
+          <div>
+            <h3 className="text-xl font-bold">Values</h3>
+            <p className="text-gray-700">At Company XYZ, we value...</p>
+          </div>
+        </section>
+      </main>
+
+      <footer className="text-center mt-10 border-t pt-6 space-y-4">
+        <div className="flex justify-center space-x-6">
+          <a href="/privacy-policy" className="text-gray-600 hover:text-gray-900">Privacy Policy</a>
+          <a href="/terms-of-service" className="text-gray-600 hover:text-gray-900">Terms of Service</a>
+          <a href="/cookie-policy" className="text-gray-600 hover:text-gray-900">Cookie Policy</a>
+        </div>
+        <p className="text-gray-600">© 2022 Company XYZ. All rights reserved.</p>
+      </footer>
+    </div>
+  );
+};
+
+export default Pages;
