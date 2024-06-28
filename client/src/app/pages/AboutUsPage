@@ -1,0 +1,110 @@
+// pages.jsx
+import React from 'react';
+import './tailwind.css'; 
+
+const Pages = () => {
+  return (
+    <div className="max-w-7xl mx-auto p-6">
+      <header className="flex justify-between items-center py-4 border-b">
+        <div className="text-2xl font-bold"> {/* Logo goes here */} JobConnect </div>
+        <nav>
+          <ul className="flex space-x-6">
+            <li><a href="/" className="text-gray-600 hover:text-gray-900">Home</a></li>
+            <li><a href="/job-listings" className="text-gray-600 hover:text-gray-900">Job Listings</a></li>
+            <li><a href="/contact" className="text-gray-600 hover:text-gray-900">Contact Us</a></li>
+          </ul>
+        </nav>
+        <div className="space-x-4">
+          <button className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Sign Up</button>
+          <button className="bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-600">Log In</button>
+        </div>
+      </header>
+
+      <main className="mt-10">
+        <section className="text-center mb-10">
+          <h1 className="text-3xl font-bold mb-4">About jobconnect</h1>
+          <p className="text-gray-700">
+            Founded in 20XX, jobconnect has been at the forefront of connecting job seekers with their dream opportunities.
+            Our platform aims to revolutionize the job search experience by providing innovative solutions for both job seekers and companies.
+          </p>
+        </section>
+
+        <section className="flex justify-between mb-10">
+          <div className="w-1/2 pr-4">
+            <h2 className="text-2xl font-bold mb-2">Key Features:</h2>
+            <ul className="list-disc list-inside text-gray-700">
+              <li>Advanced job search</li>
+              <li>Personalized job recommendations</li>
+              <li>Seamless application process</li>
+            </ul>
+          </div>
+          <div className="w-1/2 pl-4">
+            <h2 className="text-2xl font-bold mb-2">Benefits:</h2>
+            <ul className="list-disc list-inside text-gray-700">
+              <li>Increased job visibility</li>
+              <li>Enhanced candidate experience</li>
+              <li>Streamlined recruitment process</li>
+            </ul>
+          </div>
+        </section>
+
+        <section className="mb-10">
+          <h2 className="text-2xl font-bold text-center mb-6">Meet the Team</h2>
+          <div className="flex justify-around">
+            <div className="text-center">
+              <img src="path-to-john-doe-image" alt="John Doe" className="w-32 h-32 rounded-full mx-auto mb-2"/>
+              <h3 className="text-xl font-bold">John Doe</h3>
+              <p className="text-gray-600">CEO</p>
+              <p className="text-gray-700">Leading the company towards success</p>
+            </div>
+            <div className="text-center">
+              <img src="path-to-jane-smith-image" alt="Jane Smith" className="w-32 h-32 rounded-full mx-auto mb-2"/>
+              <h3 className="text-xl font-bold">Jane Smith</h3>
+              <p className="text-gray-600">CTO</p>
+              <p className="text-gray-700">Innovating for a better user experience</p>
+            </div>
+            <div className="text-center">
+              <img src="path-to-alice-johnson-image" alt="Alice Johnson" className="w-32 h-32 rounded-full mx-auto mb-2"/>
+              <h3 className="text-xl font-bold">Alice Johnson</h3>
+              <p className="text-gray-600">Head of HR</p>
+              <p className="text-gray-700">Building a strong team</p>
+            </div>
+          </div>
+        </section>
+
+        <section className="flex justify-between mb-10">
+          <div className="w-1/2 pr-4">
+            <h3 className="text-2xl font-bold mb-2">Our Mission</h3>
+            <p className="text-gray-700">
+              To empower individuals by connecting them with meaningful employment opportunities.
+            </p>
+          </div>
+          <div className="w-1/2 pl-4">
+            <h3 className="text-2xl font-bold mb-2">Our Vision</h3>
+            <p className="text-gray-700">
+              To become the leading platform for job seekers and companies to find the perfect match.
+            </p>
+          </div>
+        </section>
+      </main>
+
+      <footer className="text-center mt-10 border-t pt-6">
+        <nav>
+          <ul className="flex justify-center space-x-6 mb-4">
+            <li><a href="/about" className="text-gray-600 hover:text-gray-900">About Us</a></li>
+            <li><a href="/job-listings" className="text-gray-600 hover:text-gray-900">Job Listings</a></li>
+            <li><a href="/blog" className="text-gray-600 hover:text-gray-900">Blog</a></li>
+            <li><a href="/contact" className="text-gray-600 hover:text-gray-900">Contact Us</a></li>
+          </ul>
+        </nav>
+        <div className="flex justify-center space-x-4">
+          <a href="https://facebook.com" className="text-gray-600 hover:text-gray-900">Facebook</a>
+          <a href="https://twitter.com" className="text-gray-600 hover:text-gray-900">Twitter</a>
+          <a href="https://instagram.com" className="text-gray-600 hover:text-gray-900">Instagram</a>
+        </div>
+      </footer>
+    </div>
+  );
+};
+
+export default Pages;
