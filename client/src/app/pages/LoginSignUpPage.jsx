@@ -1,23 +1,71 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import './App.css';
 
-const LoginSignUpPage = () => {
+function App() {
+  useEffect(() => {
+    // Load the Google and Facebook SDKs
+    const loadGoogleSDK = () => {
+      const script = document.createElement('script');
+      script.src = 'https://apis.google.com/js/platform.js';
+      script.async = true;
+      document.body.appendChild(script);
+    };
+
+    const loadFacebookSDK = () => {
+      const script = document.createElement('script');
+      script.src = 'https://connect.facebook.net/en_US/sdk.js';
+      script.async = true;
+      script.onload = () => {
+        window.FB.init({
+          appId: 'YOUR_FACEBOOK_APP_ID',
+          cookie: true,
+          xfbml: true,
+          version: 'v10.0'
+        });
+      };
+      document.body.appendChild(script);
+    };
+
+    loadGoogleSDK();
+    loadFacebookSDK();
+  }, []);
+
   const googleSignIn = () => {
-    // Placeholder for Google sign-in functionality
-    console.log('Google sign-in clicked');
+    window.gapi.load('auth2', () => {
+      const auth2 = window.gapi.auth2.init({
+        client_id: 'YOUR_GOOGLE_CLIENT_ID.apps.googleusercontent.com'
+      });
+      auth2.signIn().then(googleUser => {
+        const id_token = googleUser.getAuthResponse().id_token;
+        console.log(id_token);
+        // Send the token to your server for verification and sign-in
+      });
+    });
   };
 
-  const loginWithFacebook = () => {
-    // Placeholder for Facebook sign-in functionality
-    console.log('Facebook sign-in clicked');
+  const facebookSignIn = () => {
+    window.FB.login(response => {
+      if (response.authResponse) {
+        window.FB.api('/me', { fields: 'name, email' }, response => {
+          console.log(response);
+          // Send the response to your server for verification and sign-in
+        });
+      } else {
+        console.log('User cancelled login or did not fully authorize.');
+      }
+    }, { scope: 'public_profile,email' });
   };
 
-  const loginWithTwitter = () => {
-    // Placeholder for Twitter sign-in functionality
-    console.log('Twitter sign-in clicked');
+  const instagramSignIn = () => {
+    const client_id = 'YOUR_INSTAGRAM_CLIENT_ID';
+    const redirect_uri = 'YOUR_REDIRECT_URI';
+    const authUrl = `https://api.instagram.com/oauth/authorize?client_id=${client_id}&redirect_uri=${redirect_uri}&scope=user_profile,user_media&response_type=code`;
+    window.location.href = authUrl;
   };
 
   return (
     <div className="min-h-screen bg-gray-100">
+      {/* Navbar */}
       <header className="fixed top-0 z-50 w-full bg-white shadow-lg">
         <div className="container flex items-center justify-between px-4 py-3 mx-auto">
           <div className="text-2xl font-bold">
@@ -33,11 +81,12 @@ const LoginSignUpPage = () => {
             </ul>
           </nav>
           <div>
-            <a href="LoginSignUpPage.html" className="ml-4 font-semibold text-gray-800 hover:text-blue-500">Sign Up</a>
+            <a href="#" className="ml-4 font-semibold text-gray-800 hover:text-blue-500">Sign Up</a>
           </div>
         </div>
       </header>
 
+      {/* Sign Up Form */}
       <div className="flex items-center justify-center min-h-screen pt-20">
         <div className="w-full max-w-sm p-6 mt-10 bg-white rounded-lg shadow-lg">
           <h2 className="mb-6 text-2xl font-bold text-center">Sign Up</h2>
@@ -63,8 +112,8 @@ const LoginSignUpPage = () => {
           <p className="my-4 text-base text-center">OR Login With</p>
           <div className="flex justify-between mb-4 space-x-2">
             <button id="googleBtn" onClick={googleSignIn} className="w-1/3 p-2 text-sm text-white bg-red-600 rounded-md hover:bg-red-700">Google</button>
-            <button id="facebookBtn" onClick={loginWithFacebook} className="w-1/3 p-2 text-sm text-white bg-blue-800 rounded-md hover:bg-blue-900">Facebook</button>
-            <button id="twitterBtn" onClick={loginWithTwitter} className="w-1/3 p-2 text-sm text-white bg-blue-500 rounded-md hover:bg-blue-600">Twitter</button>
+            <button id="facebookBtn" onClick={facebookSignIn} className="w-1/3 p-2 text-sm text-white bg-blue-800 rounded-md hover:bg-blue-900">Facebook</button>
+            <button id="instagramBtn" onClick={instagramSignIn} className="w-1/3 p-2 text-sm text-white bg-pink-500 rounded-md hover:bg-pink-600">Instagram</button>
           </div>
 
           <div className="mt-4 text-base text-center">
@@ -75,6 +124,6 @@ const LoginSignUpPage = () => {
       </div>
     </div>
   );
-};
+}
 
-export default LoginSignUpPage;
+export default App;

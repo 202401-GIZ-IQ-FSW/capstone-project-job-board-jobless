@@ -1,6 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const ProfilePage = () => {
+    const [searchQuery, setSearchQuery] = useState("");
+
+    const handleEditProfile = () => {
+        alert("Edit Profile button clicked");
+    };
+
+    const handleRemoveJob = (jobTitle) => {
+        alert(`Remove button clicked for ${jobTitle}`);
+    };
+
+    const handleSearch = () => {
+        alert(`Search for jobs: ${searchQuery}`);
+    };
+
     return (
         <div className="min-h-screen bg-gray-100">
             {/* Navbar */}
@@ -19,8 +33,16 @@ const ProfilePage = () => {
                         </ul>
                     </nav>
                     <div className="flex flex-col mt-2 space-y-2 md:flex-row md:mt-0 md:space-y-0 md:space-x-4">
-                        <input type="text" placeholder="Search for jobs" className="w-full p-2 text-sm border rounded md:w-64" />
-                        <button className="p-2 text-sm text-white bg-blue-500 rounded">Search</button>
+                        <input
+                            type="text"
+                            placeholder="Search for jobs"
+                            className="w-full p-2 text-sm border rounded md:w-64"
+                            value={searchQuery}
+                            onChange={(e) => setSearchQuery(e.target.value)}
+                        />
+                        <button className="p-2 text-sm text-white bg-blue-500 rounded" onClick={handleSearch}>
+                            Search
+                        </button>
                     </div>
                 </div>
             </header>
@@ -34,7 +56,9 @@ const ProfilePage = () => {
                             <h2 className="text-2xl font-bold">John Doe</h2>
                             <p className="text-gray-600">Front-end Developer</p>
                             <p className="text-gray-600">New York, USA</p>
-                            <button className="p-2 mt-2 text-sm text-white bg-blue-500 rounded">Edit Profile</button>
+                            <button className="p-2 mt-2 text-sm text-white bg-blue-500 rounded" onClick={handleEditProfile}>
+                                Edit Profile
+                            </button>
                         </div>
                     </div>
 
@@ -75,7 +99,9 @@ const ProfilePage = () => {
                                     <p className="text-gray-600">Company: RST Solutions</p>
                                     <p className="text-gray-600">Location: San Francisco, USA</p>
                                 </div>
-                                <button className="p-2 mt-2 text-sm text-white bg-red-500 rounded md:mt-0">Remove</button>
+                                <button className="p-2 mt-2 text-sm text-white bg-red-500 rounded md:mt-0" onClick={() => handleRemoveJob("Back-end Developer")}>
+                                    Remove
+                                </button>
                             </div>
                             <div className="flex flex-col items-center justify-between md:flex-row">
                                 <div className="flex-1">
@@ -83,7 +109,9 @@ const ProfilePage = () => {
                                     <p className="text-gray-600">Company: MarketingPro</p>
                                     <p className="text-gray-600">Location: London, UK</p>
                                 </div>
-                                <button className="p-2 mt-2 text-sm text-white bg-red-500 rounded md:mt-0">Remove</button>
+                                <button className="p-2 mt-2 text-sm text-white bg-red-500 rounded md:mt-0" onClick={() => handleRemoveJob("Marketing Manager")}>
+                                    Remove
+                                </button>
                             </div>
                         </div>
                     </div>
