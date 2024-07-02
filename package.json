@@ -11,10 +11,20 @@
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",
+    "bootstrap": "^5.3.3",
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
+    "jquery": "^3.7.1",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.4.4"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/202401-GIZ-IQ-FSW/capstone-project-job-board-jobless.git"
+  },
+  "bugs": {
+    "url": "https://github.com/202401-GIZ-IQ-FSW/capstone-project-job-board-jobless/issues"
+  },
+  "homepage": "https://github.com/202401-GIZ-IQ-FSW/capstone-project-job-board-jobless#readme"
 }
